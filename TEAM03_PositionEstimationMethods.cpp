@@ -58,6 +58,7 @@ int main() {
 		if (image_distance > 50000) {
 			double percent_change = (float((0.1 * pixels) / 100));
 			
+			//double num = rand() % (percent_change + percent_change + 1) - percent_change;
 			double num = (-percent_change) + (double)(rand()) / ((double)(RAND_MAX/(percent_change+percent_change))); // generate random number between +/- 0.1% of the pixel 
 			double pixels_num = pixels + num;
 			image_distance = Position_Estimation(focal_length, image_width, pixels_num);
@@ -65,13 +66,13 @@ int main() {
 
 			image_dist_list.push_back(image_distance);
 
-			cout << "Distance to HLS from target image: " << image_distance << "km" << endl;
+			cout << "Distance to HLS from target image: " << image_distance << "m" << endl;
 
 			XY_distance[0].push_back(x_y_distance[0]);
 			XY_distance[1].push_back(x_y_distance[1]);
 
-			cout << "Distance to HLS from target image (X Coordinate): " << x_y_distance[0] << endl;
-			cout << "Distance to HLS from target image (Y Coordinate): " << x_y_distance[1] << endl;
+			cout << "Distance to HLS from target image (X Coordinate): " << x_y_distance[0] << "m" << endl;
+			cout << "Distance to HLS from target image (Y Coordinate): " << x_y_distance[1] << "m" << endl;
 			cout << endl;
 		}
 		else {
