@@ -58,7 +58,6 @@ int main() {
 		if (image_distance > 50000) {
 			double percent_change = (float((0.1 * pixels) / 100));
 			
-			//double num = rand() % (percent_change + percent_change + 1) - percent_change;
 			double num = (-percent_change) + (double)(rand()) / ((double)(RAND_MAX/(percent_change+percent_change))); // generate random number between +/- 0.1% of the pixel 
 			double pixels_num = pixels + num;
 			image_distance = Position_Estimation(focal_length, image_width, pixels_num);
